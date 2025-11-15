@@ -5,3 +5,5 @@
 > -- less than
 >= -- greater than or equals to
 <= -- less than or equals to
+AND -- logical &
+OR -- logical OR
