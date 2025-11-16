@@ -6,5 +6,5 @@ varchar (l) -- strings of length l
 blob -- binary large object, used for large data (binary)
 date  -- yyyy-mm-dd
 timestamp  -- yyyy-mm-dd hh-mm-ss
-char -- caharcters of fixed space
+char -- characters of fixed space
 
