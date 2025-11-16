@@ -10,7 +10,8 @@ FOREIGN KEY (student_id) REFERENCES student(roll_no)
 
 INSERT INTO teacher(teacher_id, name, dept) VALUES
 (101, 'abc', 'mat'),
-(102, 'abd','sci');
+(102, 'abd','sci'),
+(104, 'xyz, 'bio');
 
 SELECT * FROM teacher;
 SELECT * FROM student;
