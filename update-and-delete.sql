@@ -16,5 +16,4 @@ WHERE subject = 'Maths' OR subject = 'Math' OR subject = 'Not Decided';
 
 DELETE FROM student;
 
-DESCRIBE student;
 SELECT * FROM student;
