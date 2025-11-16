@@ -103,3 +103,26 @@ GROUP BY first_name DESC;
 SELECT *
 FROM employees
 WHERE first_name LIKE '%a_';
+
+-- aggregate functions
+SELECT COUNT(first_name) AS name_count
+FROM employees;
+
+SELECT MAX(salary) AS maximum_salary
+FROM employees;
+
+SELECT COUNT(*) AS name_count_all
+FROM employees;
+
+SELECT MIN(salary) AS mimimum_salary
+FROM employees;
+
+SELECT AVG(salary) AS average_salary
+FROM employees;
+
+SELECT SUM(salary) AS sum_of_salary
+FROM employees
+-- GROUP BY is used to apply that aggregate function on each desired group rather than on whole column
+GROUP BY emp_id;
+
+-- HAVING: a more stronger condtition after group by
