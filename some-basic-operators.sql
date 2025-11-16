@@ -2,7 +2,7 @@
 = -- equals to
 <> -- not equals 
 > -- grater than
-> -- less than
+< -- less than
 >= -- greater than or equals to
 <= -- less than or equals to
 AND -- logical &
