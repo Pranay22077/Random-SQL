@@ -18,7 +18,7 @@ last_name varchar(30) not null,
 email varchar(100) unique,
 salary decimal(10,2),
 dept_id char(4),
-FOREIGN KEY (dept_id) references departments(dept_id)
+FOREIGN KEY (dept_id) references department(dept_id)
 );
 
 -- Renaming a column
@@ -45,4 +45,25 @@ DROP COLUMN age;
 ALTER TABLE employees
 MODIFY first_name VARCHAR(40) NOT NULL UNIQUE;
 
+-- Dropping a table
+DROP TABLE employees;
+
+-- Truncate a table 
+TRUNCATE TABLE employees;
+
 describe employees;
+
+-- inserting into a table
+INSERT INTO employees(first_name, last_name, emp_id, email, salary)
+VALUES ('Pranay', 'Gadh', 123, 'example@gmail.com', 10000);
+
+-- updating in a table
+UPDATE employees
+SET salary = 20000
+WHERE first_name = 'Pranay';
+
+-- deleting a tuple
+DELETE FROM employees
+WHERE emp_id = 123;
+
+SELECT * FROM employees;
