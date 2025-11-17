@@ -160,3 +160,19 @@ SELECT E.first_name, E.last_name, D.dept_id
 FROM employees E, department D
 WHERE D.dept_id IN (
 	SELECT dept_id FROM department WHERE dept_id = '23' OR dept_id = '24');
+    
+-- nested queries using ALL and SOME
+SELECT E.salary, D.dept_name, D.location
+FROM department D, employees E
+WHERE E.salary > ALL (
+		SELECT salary FROM employees WHERE salary <= 11000 );
+        
+-- creating views
+CREATE VIEW employee_details_10k AS
+SELECT first_name, last_name, salary
+FROM employees
+WHERE salary >= 10000;
+
+DROP VIEW employee_details_10k;
+
+SELECT * FROM employee_details_10k WHERE salary > 11000;
