@@ -137,3 +137,26 @@ SELECT D.dept_name, E.first_name
 FROM employees E
 INNER JOIN department D -- LEFT JOIN & RIGHT JOIN are also there
 ON E.dept_id = D.dept_id;
+
+-- set operations
+-- UNION
+SELECT E.first_name, E.last_name, E.salary, D.dept_name
+FROM employees E
+INNER JOIN department D
+ON E.dept_id = D.dept_id
+
+UNION
+
+SELECT E.first_name, E.last_name, E.email, D.location
+FROM employees E, department D;
+
+-- nested queries using IN and NOT IN
+SELECT E.first_name, E.last_name, D.dept_id
+FROM employees E, department D
+WHERE D.dept_id NOT IN (
+	SELECT dept_id FROM department WHERE dept_id = '23' OR dept_id = '24');
+    
+SELECT E.first_name, E.last_name, D.dept_id
+FROM employees E, department D
+WHERE D.dept_id IN (
+	SELECT dept_id FROM department WHERE dept_id = '23' OR dept_id = '24');
