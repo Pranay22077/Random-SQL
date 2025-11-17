@@ -10,6 +10,11 @@ dept_name VARCHAR(30) NOT NULL,
 location VARCHAR(50)
 );
 
+INSERT INTO department
+VALUES ('23', 	'science', 'delhi'),
+('24', 'maths', 'rohini'),
+('25', 'bio', 'azadpur');
+
 -- create child table
 create table employees(
 emp_id int primary key,
@@ -66,15 +71,15 @@ WHERE first_name = 'Pranay';
 DELETE FROM employees
 WHERE emp_id = 123;
 
-INSERT INTO employees(first_name, last_name, emp_id, email, salary)
-VALUES ('Pranay', 'Gadh', 101, 'pranay1@gmail.com', 10000),
- ('Aarav', 'Shah', 102, 'aarav.shah@example.com', 12000),
- ('Riya', 'Patel', 103, 'riya.patel@example.com', 11000),
- ('Meera', 'Joshi', 104, 'meera.joshi@example.com', 9500),
- ('Karan', 'Desai', 105, 'karan.desai@example.com', 13000),
- ('Isha', 'Rana', 106, 'isha.rana@example.com', 14000),
- ('Vihaan', 'Kapoor', 107, 'vihaan.kapoor@example.com', 12500),
-('Sara', 'Khan', 108, 'sara.khan@example.com', 11500);
+INSERT INTO employees(first_name, last_name, emp_id, email, salary, dept_id)
+VALUES ('Pranay', 'Gadh', 101, 'pranay1@gmail.com', 10000, '23'),
+ ('Aarav', 'Shah', 102, 'aarav.shah@example.com', 12000, '24'),
+ ('Riya', 'Patel', 103, 'riya.patel@example.com', 11000, '25'),
+ ('Meera', 'Joshi', 104, 'meera.joshi@example.com', 9500, '24'),
+ ('Karan', 'Desai', 105, 'karan.desai@example.com', 13000, '23'),
+ ('Isha', 'Rana', 106, 'isha.rana@example.com', 14000, '23'),
+ ('Vihaan', 'Kapoor', 107, 'vihaan.kapoor@example.com', 12500, '24'),
+('Sara', 'Khan', 108, 'sara.khan@example.com', 11500, '25');
 
 -- select queries
 SELECT * FROM employees;
@@ -126,3 +131,9 @@ FROM employees
 GROUP BY emp_id;
 
 -- HAVING: a more stronger condtition after group by
+
+-- Table aliases
+SELECT D.dept_name, E.first_name
+FROM employees E
+INNER JOIN department D -- LEFT JOIN & RIGHT JOIN are also there
+ON E.dept_id = D.dept_id;
