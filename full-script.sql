@@ -176,3 +176,51 @@ WHERE salary >= 10000;
 DROP VIEW employee_details_10k;
 
 SELECT * FROM employee_details_10k WHERE salary > 11000;
+
+-- Transactions
+-- START TRANSACTION, COMMIT, SAVEPOINT _name_, ROLLBACK, ROLLBACK TO _savepoint name_
+
+START TRANSACTION;
+UPDATE employees
+SET salary = 12100
+WHERE salary = 12000;
+
+COMMIT;
+
+START TRANSACTION;
+UPDATE employees
+SET salary = 9600
+WHERE salary = 9500;
+
+SAVEPOINT incr_100;
+ROLLBACK TO incr_100;
+UPDATE employees
+SET first_name = 'new', last_name = 'member'
+WHERE salary = 13000;
+
+SAVEPOINT change_name;
+
+ROLLBACK;
+
+
+SELECT * FROM employees;
+
+-- Triggers (BEFORE | AFTER // INSERT | UPDATE | DELETE)
+DELIMITER //
+CREATE TRIGGER loc_change
+BEFORE UPDATE ON employees
+FOR EACH ROW
+BEGIN
+	UPDATE department
+    SET location = 'San Francisco'
+	WHERE location = 'rohini';
+END //
+DELIMITER ; 
+
+UPDATE employees 
+SET first_name = 'human'
+WHERE salary >= 12000;
+
+SELECT * FROM employees;
+
+SELECT * FROM department;
