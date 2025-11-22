@@ -12,3 +12,8 @@ DROP TABLE student;
 DESCRIBE student;
 
 SELECT * FROM student;
+
+--ordering
+SELECT * 
+FROM student
+ORDER BY name;
