@@ -10,3 +10,5 @@ ALTER TABLE student ADD sgpa DECIMAL(3,2);
 DROP TABLE student;
 
 DESCRIBE student;
+
+SELECT * FROM student;
