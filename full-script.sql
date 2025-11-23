@@ -37,6 +37,7 @@ ALTER TABLE departments
 CHANGE COLUMN name dept_name VARCHAR(40);
 
 DESCRIBE department;
+SELECT * FROM department WHERE name LIKE 'a%';
 
 -- adding a new column
 ALTER TABLE employees
