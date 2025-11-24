@@ -1,19 +1,28 @@
+-- Switch to the target database
 USE test_db;
-CREATE TABLE student(
-roll_no INT PRIMARY KEY,
-name VARCHAR(30),
-subject VARCHAR(20)
+
+-- Create the student table
+CREATE TABLE student (
+    roll_no INT PRIMARY KEY,   -- Unique roll number
+    name VARCHAR(30),          -- Student name
+    subject VARCHAR(20)        -- Subject name
 );
 
-ALTER TABLE student ADD sgpa DECIMAL(3,2);
+-- Add a new column for SGPA (supports values like 9.25)
+ALTER TABLE student 
+ADD sgpa DECIMAL(3,2);
 
-DROP TABLE student;
-
+-- Show table structure
 DESCRIBE student;
 
-SELECT * FROM student;
+-- Retrieve all records
+SELECT * 
+FROM student;
 
---ordering
+-- Ordering results by name (ascending by default)
 SELECT * 
 FROM student
 ORDER BY name;
+
+-- If you really want to drop the table, do it at the end
+-- DROP TABLE student;
