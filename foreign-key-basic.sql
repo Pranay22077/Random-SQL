@@ -1,17 +1,25 @@
+-- Switch to the target database
 USE test_db;
 
-CREATE TABLE teacher(
-teacher_id INT PRIMARY KEY,
-name VARCHAR(20) NOT NULL,
-dept CHAR(4),
-student_id INT,
-FOREIGN KEY (student_id) REFERENCES student(roll_no)
+-- Create the teacher table
+CREATE TABLE teacher (
+    teacher_id INT PRIMARY KEY,           -- Unique teacher ID
+    name VARCHAR(20) NOT NULL,            -- Teacher name
+    dept CHAR(4),                         -- Department code (fixed length)
+    student_id INT,                       -- Linked student roll number
+    FOREIGN KEY (student_id) REFERENCES student(roll_no)
 );
 
-INSERT INTO teacher(teacher_id, name, dept) VALUES
+-- Insert sample records
+INSERT INTO teacher (teacher_id, name, dept) VALUES
 (101, 'abc', 'mat'),
-(102, 'abd','sci'),
-(104, 'xyz, 'bio');
+(102, 'abd', 'sci'),
+(104, 'xyz', 'bio');
 
-SELECT * FROM teacher;
-SELECT * FROM student;
+-- View all teachers
+SELECT * 
+FROM teacher;
+
+-- View all students
+SELECT * 
+FROM student;
