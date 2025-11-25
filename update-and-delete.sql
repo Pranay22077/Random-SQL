@@ -9,7 +9,7 @@ SET name = 'Anshita', subject = 'Accounts'
 WHERE roll_no <> 2;
 
 UPDATE student
-SET name = 'human';
+SET name = 'in-humane';
 
 DELETE FROM student
 WHERE subject = 'Maths' OR subject = 'Math' OR subject = 'Not Decided';
