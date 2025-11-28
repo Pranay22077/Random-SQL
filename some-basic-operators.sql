@@ -7,5 +7,4 @@
 <= -- less than or equals to
 AND -- logical &
 OR -- logical OR
-IN
-NOT IN
+IN, NOT IN
