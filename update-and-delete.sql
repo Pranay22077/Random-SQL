@@ -14,4 +14,4 @@ SET name = 'in-humane';
 DELETE FROM student
 WHERE subject = 'Maths' OR subject = 'Math' OR subject = 'Not Decided';
 
-SELECT * FROM student;
+SELECT * FROM student WHERE roll_no = 3;
