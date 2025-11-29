@@ -6,7 +6,7 @@ WHERE subject = 'Mathematics';
 
 UPDATE student 
 SET name = 'Anshita', subject = 'Accounts'
-WHERE roll_no <> 2;
+WHERE roll_no = 2;
 
 UPDATE student
 SET name = 'in-humane';
