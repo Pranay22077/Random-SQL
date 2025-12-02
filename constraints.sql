@@ -20,5 +20,4 @@ INSERT INTO student VALUES (4, 'Pranay', 'Physics');
 INSERT INTO student (roll_no, name) VALUES (5, 'Rishabh'); -- subject defaults to 'Not Decided'
 
 -- View all records
-SELECT * 
-FROM student;
+SELECT * FROM student;
