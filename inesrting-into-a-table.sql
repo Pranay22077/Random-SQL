@@ -6,4 +6,4 @@ INSERT INTO student VALUES(
 
 INSERT INTO student(roll_no, subject) VALUES( 3, 'ECE');
 
-SELECT * FROM student;
+SELECT * FROM student WHERE name LIKE "%b_";
