@@ -13,7 +13,7 @@ CREATE TABLE teacher (
 -- Insert sample records
 INSERT INTO teacher (teacher_id, name, dept) VALUES
 (101, 'abc', 'mat'),
-(102, 'abd', 'sci'),
+(102, 'efg', 'sci'),
 (104, 'xyz', 'bio');
 
 -- View all teachers
