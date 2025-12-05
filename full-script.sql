@@ -104,7 +104,7 @@ WHERE emp_id%2 = 0
 GROUP BY first_name DESC;
 
 -- pattern matching using _ and %
--- % is for "uske baad/ pehle ka sab" and _ is for "bas ek letter aur"
+-- % is for "uske baad/ pehle ka sab" and _ is for "atmost one letter"
 
 SELECT *
 FROM employees
