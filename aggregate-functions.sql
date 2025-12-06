@@ -1,4 +1,3 @@
--- Aggregate Functions in SQL
 
 -- COUNT(column)   : Counts non-NULL values in the column
 -- COUNT(*)        : Counts all rows, including NULL values
